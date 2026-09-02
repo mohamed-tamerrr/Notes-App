@@ -5,8 +5,7 @@ import 'package:p/core/theme/app_text_styles.dart';
 
 // TODO: AppTextStyles colors are static const, so text color won't
 // update when switching light/dark theme. Fix: make styles take
-// BuildContext and resolve color via Theme.of(context) — see conversation
-// with Claude on [date] for the full pattern.
+// BuildContext and resolve color via Theme.of(context)
 
 class AppTheme {
   AppTheme._();
