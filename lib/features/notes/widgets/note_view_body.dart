@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:p/core/theme/app_text_styles.dart';
+import 'package:p/core/theme/cubit/theme_cubit.dart';
 import 'package:p/features/notes/data/cubit/note_cubit.dart';
 import 'package:p/features/notes/widgets/add_task.dart';
 import 'package:p/features/notes/widgets/footer.dart';
@@ -18,9 +19,23 @@ class NoteViewBody extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 24.0),
           child: Column(
             children: [
-              const Text(
-                'Daily Todo’s',
-                style: AppTextStyles.heading,
+              Row(
+                children: [
+                  const Text(
+                    'Daily Todo’s',
+                    style: AppTextStyles.heading,
+                  ),
+                  IconButton(
+                    icon: Icon(
+                      Theme.of(context).brightness ==
+                              Brightness.dark
+                          ? Icons.light_mode
+                          : Icons.dark_mode,
+                    ),
+                    onPressed: () =>
+                        context.read<ThemeCubit>().toggleTheme(),
+                  ),
+                ],
               ),
               const Gap(24),
               const AddTask(),

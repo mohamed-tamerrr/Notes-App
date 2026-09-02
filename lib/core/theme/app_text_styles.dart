@@ -39,6 +39,6 @@ class AppTextStyles {
     fontFamily: 'Rubik',
     fontSize: 16,
     fontWeight: FontWeight.w400,
-    color: Colors.white,
+    color: AppColors.textPrimaryColor,
   );
 }
